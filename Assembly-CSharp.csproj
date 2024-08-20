@@ -60,8 +60,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\CameraControl.cs" />
-    <Compile Include="Assets\CameraController.cs" />
-    <Compile Include="Assets\NewBehaviourScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

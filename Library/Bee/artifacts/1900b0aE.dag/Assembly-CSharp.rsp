@@ -353,8 +353,6 @@
 -analyzer:"D:/Software/Unity Editor/2022.3.42f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"D:/Software/Unity Editor/2022.3.42f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/CameraControl.cs"
-"Assets/CameraController.cs"
-"Assets/NewBehaviourScript.cs"
 -langversion:9.0
 /deterministic
 /optimize+

@@ -557,8 +557,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   focus: {fileID: 694696814}
   MouseSpeed: 2.5
-  minSize: 2
-  maxSize: 10
+  minSize: 1
+  maxSize: 6
   zoomSpeed: 0.005
 --- !u!1 &963194225
 GameObject:
