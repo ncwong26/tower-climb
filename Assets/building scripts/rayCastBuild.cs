@@ -11,6 +11,7 @@ public class rayCastBuild : MonoBehaviour
     public Camera rayCamera;
      RaycastHit hit;
      public GameObject blockk;
+     public inventoryStack currStack;
 
     private GameObject[] stack = new GameObject[40];
     private int index=0;
@@ -19,6 +20,7 @@ public class rayCastBuild : MonoBehaviour
     void Start()
     {  
        playerBox = GameObject.FindWithTag("Player");
+       Debug.Log(playerBox);
     }
     // Update is called once per frame
     void Update()
@@ -28,8 +30,13 @@ public class rayCastBuild : MonoBehaviour
          if(Physics.Raycast(ray,out hit)){
             if(Input.GetMouseButtonDown(0)){
                 //getcurrentblock
+                currStack = playerBox.GetComponent<inventorySystem>().getCurrentItemStack();
+                Debug.Log(currStack);
+                
                 //place block  
-                placeBlock(hit.point,hit.collider.gameObject,blockk);
+
+                placeBlock(hit.point,hit.collider.gameObject,currStack);
+                Debug.Log(currStack.stackAmnt);
             }
          }
         if (Input.inputString == "\b"){
@@ -37,10 +44,11 @@ public class rayCastBuild : MonoBehaviour
         } 
         if(Input.inputString =="g"){
             playerBox.GetComponent<Rigidbody>().useGravity = true;
-        }   
+        }  
+         
     }
-    void placeBlock(Vector3 hit, GameObject anchor,GameObject placeingBlock){
-        if(placeingBlock != null){
+    void placeBlock(Vector3 hit, GameObject anchor,inventoryStack itemStack){
+        if(itemStack.stackAmnt > 0){
             if(index <40){
                 Vector3 location = hit - anchor.transform.position; //finds where the hit is relative to the block
                 Debug.Log(location);
@@ -59,12 +67,13 @@ public class rayCastBuild : MonoBehaviour
                 if(roundedLocation == Vector3.zero) {
                     return;
                 }
+                itemStack.addAmount(-1);
                 Debug.Log(roundedLocation);
+                GameObject placeingBlock = itemStack.getItem().prefab;
                 GameObject thing = Instantiate(placeingBlock, anchor.transform.position + roundedLocation, anchor.transform.rotation);
                 thing.transform.SetParent(anchor.transform);
                 thing.AddComponent<FixedJoint>();
                 thing.GetComponent<FixedJoint>().connectedBody = anchor.GetComponent<Rigidbody>();
-
                 stack[index]=thing;
                 index+=1;
             }
@@ -77,4 +86,5 @@ public class rayCastBuild : MonoBehaviour
             index-=1;
         }
     }
+
 }

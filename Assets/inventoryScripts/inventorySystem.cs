@@ -6,7 +6,9 @@ public class inventorySystem : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    inventoryStack[] inventory = new inventoryStack[10];
+    public inventoryStack[] inventory = new inventoryStack[10];
+    private int slot = 0;
+    public int currentSlot = 0;
     void Start()
     {
         
@@ -16,5 +18,12 @@ public class inventorySystem : MonoBehaviour
     void Update()
     {
         
+    }
+    public void addStack(inventoryStack stack){
+        inventory[slot]= stack;
+        slot++;
+    }
+    public inventoryStack getCurrentItemStack(){
+        return inventory[currentSlot];
     }
 }
