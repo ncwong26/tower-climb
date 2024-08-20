@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 D:\Project Files\Tower-climb\tower-climb
+=======
+C:\Users\emasc\Documents\GitHub\tower-climb
+>>>>>>> 0c7e8a574fbae640e2dd689aeb0491b1ba3325ea
