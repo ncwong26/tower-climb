@@ -10,10 +10,10 @@ public class CameraControl : MonoBehaviour
     private Vector3 maxZoom;
 
     [SerializeField] Transform focus;
-    [SerializeField] float MouseSpeed = 2.5f;
-    [SerializeField] float minSize = 1f;
-    [SerializeField] float maxSize = 6f;
-    [SerializeField] float zoomSpeed = 0.005f;
+    [SerializeField] float MouseSpeed = 3;
+    [SerializeField] float minSize = 0.5f;
+    [SerializeField] float maxSize = 10f;
+    [SerializeField] float zoomSpeed = 0.01f;
     // Start is called before the first frame update
     void Start()
     {
