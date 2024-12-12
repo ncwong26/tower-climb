@@ -293,6 +293,8 @@ InputManager:
     type: 0
     axis: 0
     joyNum: 0
+<<<<<<< HEAD
+=======
   - serializedVersion: 3
     m_Name: zaxis
     descriptiveName: 
@@ -309,4 +311,5 @@ InputManager:
     type: 0
     axis: 0
     joyNum: 0
+>>>>>>> 0c7e8a574fbae640e2dd689aeb0491b1ba3325ea
   m_UsePhysicalKeys: 1
